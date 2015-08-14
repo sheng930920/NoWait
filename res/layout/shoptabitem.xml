@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffe3b9"
+        android:gravity="center_vertical"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dip"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:gravity="center|left"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30.0dip"
+                android:singleLine="true"
+                android:text="小桌"
+                android:textSize="12.0sp" />
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30.0dip"
+                android:singleLine="true"
+                android:text="1-2人"
+                android:textColor="#ff868686"
+                android:textSize="10.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.45"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/waitnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="0"
+                android:textColor="#ffe2273a"
+                android:textSize="20.0sp" />
+
+            <TextView
+                android:id="@+id/wai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="桌"
+                android:layout_marginTop="7dp"
+                android:textColor="#ff868686"
+                android:textSize="10.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.4"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/average"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30.0dip"
+                android:singleLine="true"
+                android:text="0"
+                android:textSize="12.0sp" />
+
+            <TextView
+                android:id="@+id/tableType"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30.0dip"
+                android:singleLine="true"
+                android:text="分钟"
+                android:textColor="#ff868686"
+                android:textSize="10.0sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

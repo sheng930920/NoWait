@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/titlerelativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_background"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:id="@+id/Shoplist_shanghuleixing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/location_queue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="广州的排队"
+                android:textColor="#ffe1192d"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/Shoplist_back"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:paddingLeft="10dp"
+            android:src="@drawable/icon_search" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/middlelinearlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="40.0dip"
+        android:layout_below="@+id/titlerelativelayout"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/tv_area"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="3.0dip"
+            android:paddingRight="3.0dip" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10.0dip"
+                android:drawableLeft="@drawable/queue_icon_area"
+                android:drawablePadding="10.0dip"
+                android:singleLine="true"
+                android:text="区域"
+                android:textColor="#ff4b4b4b"
+                android:textSize="16.0sp" />
+
+            <ImageView
+                android:id="@+id/areaArrow"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_down_arrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1.0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="5.0dip"
+            android:layout_marginTop="5.0dip"
+            android:background="#ffccced8" />
+
+        <LinearLayout
+            android:id="@+id/tv_statu"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="3.0dip"
+            android:paddingRight="3.0dip" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10.0dip"
+                android:drawableLeft="@drawable/queue_icon_being"
+                android:drawablePadding="10.0dip"
+                android:singleLine="true"
+                android:text="状态"
+                android:textColor="#ff4b4b4b"
+                android:textSize="16.0sp" />
+
+            <ImageView
+                android:id="@+id/stateArrow"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_down_arrow" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/View"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_below="@+id/middlelinearlayout"
+        android:background="#ffd5d7df" />
+
+    <ListView
+        android:id="@+id/ShopListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/View" />
+
+    <ListView
+        android:id="@+id/statulist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/View"
+        android:background="#ffffff"
+        android:divider="@null"
+        android:padding="3dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/arealist_layout"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:layout_below="@+id/View"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <ListView
+            android:id="@+id/arealist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:background="#F4F4F4"
+            android:divider="@null"
+            android:scrollbars="none" />
+
+        <ListView
+            android:id="@+id/arealist_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="17"
+            android:background="#FFFFFF"
+            android:divider="@null" />
+    </LinearLayout>
+
+</RelativeLayout>

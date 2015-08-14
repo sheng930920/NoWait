@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/queueLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/queueLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:id="@+id/titleLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="44.0dip"
+            android:background="#ffe2273a"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tableType"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:gravity="center|left"
+                android:paddingLeft="30.0dip"
+                android:singleLine="true"
+                android:text="餐桌类型"
+                android:textColor="#ffffffff"
+                android:textSize="14.0sp" />
+
+            <View
+                android:layout_width="2.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="13.0dip"
+                android:layout_marginTop="13.0dip"
+                android:background="@drawable/queue_detail_separate_line_left" />
+
+            <TextView
+                android:id="@+id/waitingCount"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.45"
+                android:gravity="center"
+                android:text="等待桌数"
+                android:textColor="#ffffffff"
+                android:textSize="14.0sp" />
+
+            <View
+                android:layout_width="2.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="13.0dip"
+                android:layout_marginTop="13.0dip"
+                android:background="@drawable/queue_detail_separate_line_right" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.4"
+                android:gravity="center"
+                android:text="预计等待"
+                android:textColor="#ffffffff"
+                android:textSize="14.0sp" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/getNumberLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="57.0dip"
+            android:background="@drawable/queue_detail_bg_number" >
+
+            <Button
+                android:id="@id/getNumber"
+                android:layout_width="112.0dip"
+                android:layout_height="40.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="28.0dip"
+                android:background="@drawable/queue_shop_btn_number"
+                android:paddingLeft="20.0dip"
+                android:paddingRight="20.0dip"
+                android:text="立即取号"
+                android:textColor="#ffffffff"
+                android:textSize="14.0sp" />
+
+            <LinearLayout
+                android:id="@+id/current"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/getNumber"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30.0dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/currentDistanceTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:text="4.0km"
+                    android:textColor="#ff575757" />
+
+                <TextView
+                    android:id="@+id/currentDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前距离"
+                    android:textColor="#ff575757"
+                    android:textSize="12.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/limit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/getNumber"
+                android:layout_marginLeft="20.0dip"
+                android:layout_toLeftOf="@id/getNumber"
+                android:layout_toRightOf="@+id/current"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/limitDistanceTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:text="30km"
+                    android:textColor="#ff868686"
+                    android:textSize="12.0sp" />
+
+                <TextView
+                    android:id="@+id/limitDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="限制距离"
+                    android:textColor="#ff868686"
+                    android:textSize="12.0sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/queueInfo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <View
+            android:id="@+id/queueInfoLine"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="#ffd1d3d5" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="#ffccced8" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/queue_detail_bg_number"
+        android:gravity="center_vertical"
+        android:paddingBottom="10dip"
+        android:paddingTop="10dip" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/queue_detail_icon_knifepork" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="本店现在无需排队" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="快带上小伙伴来吧"
+                android:textColor="#ff868686"
+                android:textSize="12.0sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/queue_detail_bg_number"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="30.0dip"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/queue_detail_warn"
+            android:text="听到号请到迎宾台，过号不作废，延三桌安排"
+            android:textColor="#ff575757"
+            android:textSize="12.0sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/queue_detail_bg_number"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="8"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:text="酷点餐厅(琶洲店)"
+                    android:textColor="#ff868686"
+                    android:textSize="15.0sp" />
+
+                <LinearLayout
+                    android:id="@+id/shoptype"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="中餐"
+                        android:textColor="#ff868686"
+                        android:textSize="12.0sp" />
+
+                    <TextView
+                        android:id="@+id/type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="￥60/人"
+                        android:textColor="#ff868686"
+                        android:textSize="12.0sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.5dip"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_marginTop="5dp"
+                android:background="#ffccced8" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/queue_detail_icon_collect_default" />
+            </LinearLayout>
+            <!-- 第一个水平layout -->
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#ffccced8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="8"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@drawable/queue_detail_icon_queue_pin" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="海珠区阅江路磨碟沙大街118号珠江琶醍啤酒文化创意艺术区B区"
+                        android:textColor="#ff868686"
+                        android:textSize="12.0sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="5dp"
+                    android:drawableLeft="@drawable/queue_detail_clock"
+                    android:text="营业时间：08:00-14:00 16:00-21:00"
+                    android:textColor="#ff868686"
+                    android:textSize="12.0sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.5dip"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_marginTop="5dp"
+                android:background="#ffccced8" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/queue_detail_icon_call" />
+            </LinearLayout>
+            <!-- 第一个水平layout -->
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#ffccced8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/fghtr"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/sdds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="优惠信息"
+                    android:textColor="#ff868686"
+                    android:textSize="15.0sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.5dip"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_marginTop="5dp"
+                android:background="#ffccced8" />
+
+            <LinearLayout
+                android:id="@+id/adf"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="8"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="本店暂无优惠"
+                    android:textColor="#ff868686"
+                    android:textSize="15.0sp" />
+            </LinearLayout>
+            <!-- 第3个水平layout -->
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/moreshop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:background="@drawable/queue_detail_bg_number"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dip"
+            android:text="查看分店"
+            android:textSize="15sp"
+             />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/queue_detail_icon_queue_arrow" />
+
+    </RelativeLayout>
+
+</LinearLayout>
